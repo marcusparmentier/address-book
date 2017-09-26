@@ -20,6 +20,10 @@ Address.prototype.fullAddress = function() {
   return this.addType + ", " + this.street + ", " + this.city + ", " + this.state;
 }
 
+function clearForm() {
+  $( ".clearExtraAdd" ).remove();
+}
+
 function resetFields() {
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
@@ -33,7 +37,7 @@ function resetFields() {
 $(document).ready(function() {
 
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").append('<div class="new-address clearExtraAdd">' +
                                 '<div class="form-group">' +
                                   '<label for="new-addType">Address type</label>' +
                                   '<input type="text" class="form-control new-addType">' +
@@ -81,6 +85,8 @@ $(document).ready(function() {
         $("ol#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
     });
+
+    clearForm();
 
     resetFields();
 
