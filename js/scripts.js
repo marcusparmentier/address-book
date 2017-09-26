@@ -69,9 +69,9 @@ $(document).ready(function() {
       $("#show-contact h2").text(newContact.fullName());
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
-      $("ul#addresses").text("");
+      $("ol#addresses").text("");
       newContact.addresses.forEach(function(address) {
-        $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+        $("ol#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
     });
 
